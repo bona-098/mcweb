@@ -19,12 +19,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/article', function () {
-    return view('layouts/article');
-});
-
 Route::get('/user', function () {
     return view('layouts/user');
+});
+
+Route::get('/article', function () {
+    return view('layouts/article');
 });
 
 Route::get('/pembayaran', function () {
