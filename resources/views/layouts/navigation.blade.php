@@ -27,7 +27,7 @@
                     Quiz
                 </a>
                 <a 
-                    href="Psychologist"
+                    href="/psikolog"
                     class="navbar-item is-mediumed px-5">
                     Psychologist
                 </a>

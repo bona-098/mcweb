@@ -33,8 +33,20 @@ Route::get('/article', function () {
     return view('layouts/article');
 });
 
+Route::get('/psikolog', function () {
+    return view('layouts/psikolog');
+});
+
+Route::get('/buatjanji', function () {
+    return view('layouts/buatjanji');
+});
+
 Route::get('/pembayaran', function () {
     return view('layouts/pembayaran');
+});
+
+Route::get('/profile', function () {
+    return view('profile');
 });
 
 Route::get('/profile', [ProfileController::class, 'view']);
