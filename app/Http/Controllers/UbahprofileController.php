@@ -23,7 +23,7 @@ class UbahprofileController extends Controller
         return view('admin.createUser');
     }
 
-    /**
+    /**  
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
