@@ -39,7 +39,7 @@
                     <div class="navbar-item">
                         @if (auth()->id() !== null)
                             <div class="buttons">
-                                <a href="login" class="button is-dark is-mediumed is-inverted px-5">{{auth()->user()->email}}</a>
+                                <a href="profile" class="button is-dark is-mediumed is-inverted px-5">{{auth()->user()->email}}</a>
                                 <a href="register" class="button is-danger px-5">
                                     <strong class="has-text-light is-mediumed">
                                         <form action="{{route('logout')}}" method="post">
