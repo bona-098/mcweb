@@ -1,5 +1,8 @@
 <x-app-layout> 
 <section id="mc-formjanji" class="section">
+    <form method="POST" action="{{route('psikolog.create')}}">
+        @csrf
+        
     <h2 class="is-size-3 is-fwindsor mt-4">Buat Janji</h2>
         <p class="is-size-6 has-text-grey">Harap mengisi Form untuk membuat janji</p>
         <br>
@@ -11,14 +14,11 @@
                 <img src="{{asset('img')}}/james.jpg" alt="Foto Profil">
                 <div>
                     <p class="is-size-6 has-text-grey ml-3">Nama :</p>
-                    <h4 class="is-size-4 is-fwindsor ml-5">James Ulrech M.Psi</h4>
-                    <p class="is-size-6 has-text-grey mt-2 ml-3">No. SKP :</p>
-                    <h4 class="is-size-5 is-fwindsormt-1 ml-5">141531643735</h4>
-                    <p class="is-size-6 has-text-grey mt-2 ml-3">Tempat Praktek :</p>
-                    <h4 class="is-size-5 is-fwindsor mt-1 ml-5">RSUD Balikpapan</h4>
-                    <p class="is-size-6 has-text-grey mt-2 ml-3">Umur :</p>
-                    <li class="is-size-5 is-fwindsor mt-1 ml-5">S1 Psikologi Universitas Indonesia</li>
-                    <li class="is-size-5 is-fwindsor mt-1 ml-5">S2 Psikologi Universitas Indonesia</li>
+                    <h4 class="is-size-4 is-fwindsor ml-5">{{$psikolog->nama_psikolog}}</h4>
+                    <p class="is-size-6 has-text-grey mt-2 ml-3">Alamat :</p>
+                    <h4 class="is-size-5 is-fwindsormt-1 ml-5">{{$psikolog->alamat}}</h4>
+                    <p class="is-size-6 has-text-grey mt-2 ml-3">kategori :</p>
+                    <h4 class="is-size-5 is-fwindsor mt-1 ml-5">{{$psikolog->kategori}}</h4>
                 </div>
             </div>
         </div>
@@ -63,7 +63,7 @@
             <div class="field mb-5">
                 <label class="is-size-5">Pilih Jadwal</label>
                 <div class="control mt-2">
-                    <div class="select is-fullwidth is-medium">
+                    <div name="jadwal" class="select is-fullwidth is-medium">
                       <select>
                         <option selected disabled>Pilih Waktu</option>
                         <option>Senin, 10.00-11.30</option>
@@ -78,8 +78,9 @@
 
             <div class="field">
                 <p class="control">
-                    <a type="submit" class="button is-dark is-medium is-fullwidth" href="pembayaran">Buat Janji</a>
+                    <button type="submit" class="button is-dark is-medium is-fullwidth">Buat Janji</button>
                 </p>
             </div>
+        </form>
 </section>
 </x-app-layout>

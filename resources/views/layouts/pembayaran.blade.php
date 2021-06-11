@@ -37,7 +37,7 @@
 
             <div class="field">
                 <p class="control">
-                    <a type="submit" class="button is-dark is-medium is-fullwidth" href="profile">Konfirmasi Pembayaran</a>
+                    <a type="submit" class="button is-dark is-medium is-fullwidth" href="{{route('editpro.index')}}">Konfirmasi Pembayaran</a>
                 </p>
             </div>
 </section>

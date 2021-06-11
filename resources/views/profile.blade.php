@@ -66,7 +66,7 @@
 				<div class="column is-8" style="border: 1px solid lightgrey; border-radius: 3px; margin-bottom: 15px;">
 					<div class="columns">
 						<div class="column">
-							<a href="subjects-detail.php" class="is-semibolded is-size-4">Dr. Agung Hendrawan</a>
+							<a href="subjects-detail.php" class="is-semibolded is-size-4">f</a>
 						</div>
 						<div class="column is-3 has-text-centered">
 							<p class="has-background-warning">Proses Pembayaran</p>

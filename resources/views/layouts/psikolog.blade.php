@@ -5,9 +5,9 @@
             <img src="{{asset('img')}}/Header-3-2.png" alt="Foto Profil" class="avatar responsive">
           </div>
           <div>
-            <h2>Muhhadi Adi Manyu</h2>
+            <h2>{{Auth::User()->name}}</h2>
             <h4 style="color:springgreen;">Online</h4>
-            <h4>20 Tahun</h4>
+            <h4>{{Auth::User()->tgl_lahir}}</h4>
           </div>
           <a class="navbar-end button is-rounded" href="#">
             Lihat Profil
@@ -29,62 +29,22 @@
                 </span>
               </a>
             </p>
+            @foreach ($psikolog as $item)
+              <div class="panel psikolog">
+                <img src="{{asset('img')}}/james.jpg" alt="Foto Profil" class="avatar responsive">
+                <div class="bio">
+                  <h2>{{$item->nama_psikolog}}</h2>
+                  <h4 style="color:springgreen;">Tersedia</h4>
+                  <h4>"{{$item->umur}}"</h4>
+                </div>
+                <a class="navbar-end button is-primary is-rounded" href="{{route('psikolog.show',$item->id)}}">
+                  Buat Janji
+                </a>
+              </div>
+            @endforeach
+            
 
-            <div class="panel psikolog">
-              <img src="{{asset('img')}}/james.jpg" alt="Foto Profil" class="avatar responsive">
-              <div class="bio">
-                <h2>James Ulrech, M.Psi</h2>
-                <h4 style="color:springgreen;">Tersedia</h4>
-                <h4>20 Tahun</h4>
-              </div>
-              <a class="navbar-end button is-primary is-rounded" href="buatjanji">
-                Buat Janji
-              </a>
-            </div>
-            <div class="panel psikolog">
-              <img src="{{asset('img')}}/clarissa.jpg" alt="Foto Profil" class="avatar responsive">
-              <div class="bio">
-                <h2>Clarissa Hancock, M.Psi</h2>
-                <h4 style="color:springgreen;">Tersedia</h4>
-                <h4>20 Tahun</h4>
-              </div>
-              <a class="navbar-end button is-primary is-rounded" href="formjanji.html">
-                Buat Janji
-              </a>
-            </div>
-            <div class="panel psikolog">
-              <img src="{{asset('img')}}/peter.jpg" alt="Foto Profil" class="avatar responsive" >
-              <div class="bio">
-                <h2>Peter Harisson S.Psi</h2>
-                <h4 style="color:springgreen;">Tersedia</h4>
-                <h4>20 Tahun</h4>
-              </div>
-              <a class="navbar-end button is-primary is-rounded" href="formjanji.html">
-                Buat Janji
-              </a>
-            </div>
-            <div class="panel psikolog">
-              <img src="{{asset('img')}}/elisha.jpg" alt="Foto Profil" class="avatar responsive">
-              <div class="bio">
-                <h2>Elisha, M.Psi</h2>
-                <h4 style="color:springgreen;">Tersedia</h4>
-                <h4>20 Tahun</h4>
-              </div>
-              <a class="navbar-end button is-primary is-rounded" href="formjanji.html">
-                Buat Janji
-              </a>
-            </div>
-            <div class="panel psikolog">
-              <img src="{{asset('img')}}/michael.jpg" alt="Foto Profil" class="avatar responsive">
-              <div class="bio">
-                <h2>Dr. Michael Pazlowski</h2>
-                <p>Tidak Tersedia</p>
-                <h4>20 Tahun</h4>
-              </div>
-              <a class="navbar-end button is-rounded" title="Disabled button" disabled href="#">
-                Buat Janji
-              </a>
-            </div>
+            
         </nav>
 	</section>
 </x-app-layout>

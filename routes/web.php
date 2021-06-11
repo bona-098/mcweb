@@ -6,6 +6,8 @@ use app\Http\Controllers\PembayaranController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\ChangepasswordController;
 use App\Http\Controllers\UbahprofileController;
+use App\Http\Controllers\PsikologController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +27,10 @@ Route::get('/user', function () {
     return view('layouts/user');
 });
 
+Route::get('/admin', function () {
+    return view('admin/janji');
+});
+
 Route::get('/editpro', function () {
     return view('editpro');
 });
@@ -33,9 +39,9 @@ Route::get('/article', function () {
     return view('layouts/article');
 });
 
-Route::get('/psikolog', function () {
-    return view('layouts/psikolog');
-});
+// Route::get('/psikolog', function () {
+//     return view('layouts/psikolog');
+// });
 
 Route::get('/buatjanji', function () {
     return view('layouts/buatjanji');
@@ -59,8 +65,5 @@ require __DIR__.'/auth.php';
 
 Route::get('/editpasw', [ChangepasswordController::class, 'change_password']);
 Route::post('/tumkm_update/{id}',[TumkmController::class, 'update'])->name('tumkm_update');
-
-// Route::get('/editpro', [UbahprofiledController::class, 'update']);
-// Route::post('/editpro', [UbahprofiledController::class, 'update_profil']);
 Route::resource('editpro', UbahprofileController::class);
-// Route::post('/update-password','ChangepasswordController')->name('update_password');
+Route::resource('/psikolog', psikologController::class);
