@@ -1,6 +1,6 @@
 <x-app-layout> 
 <section id="mc-formjanji" class="section">
-    <form method="POST" action="{{route('psikolog.create')}}">
+    <form method="post" action="{{route('buatjanji.store')}}" enctype="multipart/form-data">
         @csrf
         
     <h2 class="is-size-3 is-fwindsor mt-4">Buat Janji</h2>
@@ -63,24 +63,66 @@
             <div class="field mb-5">
                 <label class="is-size-5">Pilih Jadwal</label>
                 <div class="control mt-2">
-                    <div name="jadwal" class="select is-fullwidth is-medium">
-                      <select>
+                    <div  class="select is-fullwidth is-medium">
+                      <select name="jadwal_psikolog">
                         <option selected disabled>Pilih Waktu</option>
-                        <option>Senin, 10.00-11.30</option>
-                        <option>Senin, 11.30-12.00</option>
-                        <option>Selasa, 13.30-14.00</option>
-                        <option>Rabu, 14.30-15.00</option>
-                        <option>Rabu, 16.00-16.30</option>
+                        @foreach ($jadwal as $janji)
+                        <option>{{$janji->hari}},{{$janji->jam}}</option>    
+                        @endforeach
                       </select>
                     </div>
                 </div>
             </div>
 
-            <div class="field">
+            {{-- <div class="field">
                 <p class="control">
                     <button type="submit" class="button is-dark is-medium is-fullwidth">Buat Janji</button>
                 </p>
-            </div>
-        </form>
+            </div> --}}
+      
+
+        {{-- <section id="mc-pembayaran" class="section">
+            <h2 class="is-size-3 is-fwindsor mt-4">Bukti Pembayaran</h2>
+                <p class="is-size-6 has-text-grey">Silahkan upload bukti pembayaran kamu maksimal 24 Jam</p>
+                <br>
+            
+            <div class="container ">
+    
+    
+            </div> --}}
+    
+            <article class="message is-dark">
+                <div class="message-body">
+                    <p class="is-size-6 has-text-grey mt-2 ml-3">Silahkan Melalukan pembayaransebesar Rp 250.000 ke rekening bank berikut :</p>
+                    <li class="is-size-5 is-fwindsor mt-1 ml-5">BNI (001) 0988659967548 a.n PT. Mental Care Indonesia</li>
+                    <li class="is-size-5 is-fwindsor mt-1 ml-5">BRI (010) 0754477880700654 a.n PT. Mental Care Indonesia</li>
+                </div>
+              </article>
+    
+                    <div class="field mb-5">
+                        <label class="is-size-5">Bukti Pembayaran</label>
+                        <div class="file mt-2 is-boxed has-name is-fullwidth">
+                            <label class="file-label">
+                                  <input class="file-input id-input" type="file" name="bukti_pembayaran" accept="image/*">
+                                  <span class="file-cta">
+                                    <span class="file-icon">
+                                          <i class="fas fa-upload"></i>
+                                    </span>
+                                    <span class="file-label has-text-centered">
+                                          Pilih Gambar
+                                    </span>
+                                  </span>
+                                <span class="id-file-name file-name">No file selected</span>
+                            </label>
+                        </div>
+                    </div>
+                    <input class="file-input id-input" type="hidden" name="user_id" value="{{Auth::user()->id}}">
+                    <input class="file-input id-input" type="hidden" name="psikolog_id" value="{{$psikolog->id}}">
+                    <div class="field">
+                        <p class="control">
+                            <button type="submit" class="button is-dark is-medium is-fullwidth" >Konfirmasi Pembayaran</button>
+                        </p>
+                    </div>
+                </form>
 </section>
 </x-app-layout>

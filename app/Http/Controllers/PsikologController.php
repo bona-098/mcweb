@@ -23,11 +23,7 @@ class PsikologController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
-    {
-        $anjing = $request->jadwal;
-        return view('layouts.pembayaran');
-    }
+    
 
     /**
      * Store a newly created resource in storage.

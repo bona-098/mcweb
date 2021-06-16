@@ -35,9 +35,10 @@
                 <div class="bio">
                   <h2>{{$item->nama_psikolog}}</h2>
                   <h4 style="color:springgreen;">Tersedia</h4>
-                  <h4>"{{$item->umur}}"</h4>
+                  <h4>"{{$item->kategori}}"</h4>
+
                 </div>
-                <a class="navbar-end button is-primary is-rounded" href="{{route('psikolog.show',$item->id)}}">
+                <a class="navbar-end button is-primary is-rounded" href="{{route('buatjanji.show',$item->id)}}">
                   Buat Janji
                 </a>
               </div>

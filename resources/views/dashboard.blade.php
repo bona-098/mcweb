@@ -14,9 +14,9 @@
             <img src="img/Header-3-2.png" alt="Foto Profil" class="avatar responsive">
           </div>
           <div>
-            <h2>Muhhadi Adi Manyu</h2>
+            <h2>{{Auth::User()->name}}</h2>
             <h4 style="color:springgreen;">Online</h4>
-            <h4>20 Tahun</h4>
+            <h4>{{Auth::User()->tgl_lahir}}</h4>
           </div>
           <a class="navbar-end button is-rounded" href="/profile">
             Lihat Profil

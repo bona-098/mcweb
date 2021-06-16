@@ -22,7 +22,7 @@
                     Home
                 </a>
                 <a 
-                    href="quiz"
+                    href="{{route('psikolog.index')}}"
                     class="navbar-item is-mediumed px-5">
                     Quiz
                 </a>

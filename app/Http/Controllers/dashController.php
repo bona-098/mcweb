@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 class dashController extends Controller
 {
-    $psikolog = psikolog::find(auth()->id());
-    return view('psikolog', compact('psikolog'));
+    public function index($id){
+        $psikolog = psikolog::where('id',$id);
+        return view('psikolog', compact('psikolog'));
+    }
 }

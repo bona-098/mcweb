@@ -7,7 +7,8 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Auth\ChangepasswordController;
 use App\Http\Controllers\UbahprofileController;
 use App\Http\Controllers\PsikologController;
-
+use App\Http\Controllers\JanjiController;
+use App\Http\Controllers\AdminjanjiController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -27,8 +28,12 @@ Route::get('/user', function () {
     return view('layouts/user');
 });
 
-Route::get('/admin', function () {
-    return view('admin/janji');
+Route::get('/adminjanji', function () {
+    return view('layouts/adminjanji');
+});
+
+Route::get('/detailjanji', function () {
+    return view('layouts/detailjanji');
 });
 
 Route::get('/editpro', function () {
@@ -66,4 +71,7 @@ require __DIR__.'/auth.php';
 Route::get('/editpasw', [ChangepasswordController::class, 'change_password']);
 Route::post('/tumkm_update/{id}',[TumkmController::class, 'update'])->name('tumkm_update');
 Route::resource('editpro', UbahprofileController::class);
-Route::resource('/psikolog', psikologController::class);
+Route::resource('/psikolog', PsikologController::class);
+// Route::resource('buatjanji', JanjiController::class);
+Route::resource('buatjanji', JanjiController::class);
+Route::resource('adminjanji', AdminjanjiController::class);

@@ -63,26 +63,34 @@
 				<div class="column is-9">
 					<h3 class="is-size-3 is-uppercase has-text-dark title">Riwayat Janji</h3>
 				</div>
+				@foreach ($campuran as $item)
 				<div class="column is-8" style="border: 1px solid lightgrey; border-radius: 3px; margin-bottom: 15px;">
-					<div class="columns">
-						<div class="column">
-							<a href="subjects-detail.php" class="is-semibolded is-size-4">f</a>
-						</div>
+					<div class="columns">						
+						<div class="column">							
+								<a href="#" class="is-semibolded is-size-4">{{$item->nama_psikolog}}</a>
+								<br>
+								<p>{{$item->jadwal_psikolog}}</p>									
+						</div>		
+						
+						@if ($item->status == 'Proses')
 						<div class="column is-3 has-text-centered">
-							<p class="has-background-warning">Proses Pembayaran</p>
+							<p class="has-background-warning">Proses</p>
 						</div>
+						@elseif ($item->status == 'Tolak')
+						<div class="column is-3 has-text-centered">
+							<p class="has-background-danger">Tertolak</p>
+						</div>
+						@else					
+						<div class="column is-3 has-text-centered">
+							<p class="has-background-primary has-text-light">Diterima</p>
+						</div>
+						@endif
+			
+
+
 					</div>
 				</div>
-				<div class="column is-8" style="border: 1px solid lightgrey; border-radius: 3px; margin-bottom: 15px;">
-					<div class="columns">
-						<div class="column">
-							<a href="subjects-detail.php" class="is-semibolded is-size-4">Dr. Indah Kusuma</a>
-						</div>
-						<div class="column is-3 has-text-centered">
-							<p class="has-background-primary has-text-light">Terverifikasi</p>
-						</div>
-					</div>
-				</div>
+				@endforeach	
 			</div>
 		</div>
 	</section>

@@ -1,4 +1,4 @@
-@include('layouts.header') 
+{{-- @include('layouts.header') 
     <section id="mc-pembayaran" class="section">
 		<h2 class="is-size-3 is-fwindsor mt-4">Bukti Pembayaran</h2>
 			<p class="is-size-6 has-text-grey">Silahkan upload bukti pembayaran kamu maksimal 24 Jam</p>
@@ -41,4 +41,4 @@
 					</p>
 				</div>
 	</section>
-    @include('layouts.footer')
+    @include('layouts.footer') --}}

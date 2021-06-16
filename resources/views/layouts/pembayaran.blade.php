@@ -1,4 +1,4 @@
-<x-app-layout> 
+{{-- <x-app-layout> 
 <section id="mc-pembayaran" class="section">
     <h2 class="is-size-3 is-fwindsor mt-4">Bukti Pembayaran</h2>
         <p class="is-size-6 has-text-grey">Silahkan upload bukti pembayaran kamu maksimal 24 Jam</p>
@@ -11,6 +11,7 @@
 
     <article class="message is-dark">
         <div class="message-body">
+            <p>{{$nama}}</p>
             <p class="is-size-6 has-text-grey mt-2 ml-3">Silahkan Melalukan pembayaransebesar Rp 250.000 ke rekening bank berikut :</p>
             <li class="is-size-5 is-fwindsor mt-1 ml-5">BNI (001) 0988659967548 a.n PT. Mental Care Indonesia</li>
             <li class="is-size-5 is-fwindsor mt-1 ml-5">BRI (010) 0754477880700654 a.n PT. Mental Care Indonesia</li>
@@ -41,4 +42,4 @@
                 </p>
             </div>
 </section>
-</x-app-layout>
+</x-app-layout> --}}
