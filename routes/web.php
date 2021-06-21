@@ -9,6 +9,10 @@ use App\Http\Controllers\UbahprofileController;
 use App\Http\Controllers\PsikologController;
 use App\Http\Controllers\JanjiController;
 use App\Http\Controllers\AdminjanjiController;
+use App\Http\Controllers\ArticleHomeController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\PasienController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -40,8 +44,13 @@ Route::get('/editpro', function () {
     return view('editpro');
 });
 
+// Route::get('/adminarticle', function () {
+    // return view('layouts.adminarticle');
+// });
+
+
 Route::get('/article', function () {
-    return view('layouts/article');
+    return view('article');
 });
 
 // Route::get('/psikolog', function () {
@@ -75,3 +84,9 @@ Route::resource('/psikolog', PsikologController::class);
 // Route::resource('buatjanji', JanjiController::class);
 Route::resource('buatjanji', JanjiController::class);
 Route::resource('adminjanji', AdminjanjiController::class);
+Route::resource('article', ArticlehomeController::class);
+Route::resource('articledetail', ArticlehomeController::class);
+Route::resource('articlead', ArticleController::class);
+Route::resource('pasienad', PasienController::class);
+
+

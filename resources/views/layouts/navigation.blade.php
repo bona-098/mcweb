@@ -32,7 +32,7 @@
                     Psychologist
                 </a>
                 <a 
-                href="article.php" 
+                href="{{route('article.index')}}" 
                 class="navbar-item is-mediumed px-5">
                     Article
                 </a>

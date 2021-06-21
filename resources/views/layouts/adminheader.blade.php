@@ -86,7 +86,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="pasien.php" class="nav-link">
+            <a href="{{route('pasienad.index')}}" class="nav-link">
               <i class="fas fa-circle nav-icon"></i>
               <p>Pasien</p>
             </a>
@@ -98,7 +98,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a href="article.php" class="nav-link">
+            <a href="{{route('articlead.index')}}" class="nav-link">
               <i class="fas fa-circle nav-icon"></i>
               <p>Artikel</p>
             </a>
